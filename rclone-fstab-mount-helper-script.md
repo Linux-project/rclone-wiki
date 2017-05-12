@@ -1,45 +1,70 @@
-To enable mounting a volume using rclone via an fstab entry, a following script can be used:
+## rclonefs helper script 
+
+To enable mounting a volume using rclone via an entry in `/etc/fstab` the following helper script can be used:
 
     #!/bin/bash
-    
-    src=$1
-    dst=$2
-    
+    remote=$1
+    mountpoint=$2
     shift 2
-    
+
     # Process -o parameters
     while getopts :o: opts; do
-    	case $opts in
-    		o)
-    			parms=`echo $OPTARG | sed -e 's/,/ /g'`
-    			for parm in $parms; do
-    				if [ $parm == "rw"   ]; then continue; fi
-    				if [ $parm == "dev"  ]; then continue; fi
-    				if [ $parm == "suid" ]; then continue; fi
-    				if [ $parm == "exec" ]; then continue; fi
-    				if [ $parm == "noexec" ]; then continue; fi
-    				if [ $parm == "nosuid" ]; then continue; fi
-    				if [ $parm == "nodev" ]; then continue; fi
-    				trans="$trans --$parm"
-    			done
-    			;;
-    		\?)
-    			echo "Invalid option: -$OPTARG"
-    			;;
-    	esac
+        case $opts in
+            o)
+                params=${OPTARG//,/ }
+                for param in $params; do
+                    if [ "$param" == "rw"   ]; then continue; fi
+                    if [ "$param" == "ro"   ]; then continue; fi
+                    if [ "$param" == "dev"  ]; then continue; fi
+                    if [ "$param" == "suid" ]; then continue; fi
+                    if [ "$param" == "exec" ]; then continue; fi
+                    if [ "$param" == "auto" ]; then continue; fi
+                    if [ "$param" == "nodev" ]; then continue; fi
+                    if [ "$param" == "nosuid" ]; then continue; fi
+                    if [ "$param" == "noexec" ]; then continue; fi
+                    if [ "$param" == "noauto" ]; then continue; fi
+                    if [[ $param == x-systemd.* ]]; then continue; fi
+                    trans="$trans --$param"
+                done
+                ;;
+            \?)
+                echo "Invalid option: -$OPTARG"
+                ;;
+        esac
     done
-    
-    trans="$trans $src $dst"
-    
+
+    # exec rclone
+    trans="$trans $remote $mountpoint"
     PATH=$PATH rclone mount $trans &
     sleep 5
 
+Then in `/etc/fstab` you can add something like:
 
-Then in fstab you can add something like:
+    rclonefs#remote:/path/to/remote/folder	/mnt/rclone	fuse	config=/home/user/.rclone.conf,allow-other,default-permissions,read-only,max-read-ahead=16M	0	0
 
-    rclonefs#crypt:/path /mnt/tmp fuse config=/home/user/.rclone.conf,allow-other,default-permissions,read-only,max-read-ahead=16M 0 0
+Obviously, replace `/home/user/.rclone.conf` with the path to your config and replace `remote:/path/to/remote/folder` with the name of your remote the path you want to mount.
 
-Obviously, change the path to your config appropriately, and the name of the remote (in the above case "crypt" and the paths.
+#### Important:
+- rclonefs wrapper has to be in the PATH=/usr/local/bin:/usr/bin. mount is suid and doesn't ignores pre-set PATHs. Similarly, rclone invocation fails to find fusermount if not invoked with PATH=$PATH explicitly set.
 
-Important:
-rclonefs wrapper has to be in the PATH=/usr/local/bin:/usr/bin. mount is suid and doesn't ignores pre-set PATHs. Similarly, rclone invocation fails to find fusermount if not invoked with PATH=$PATH explicitly set.
+
+## systemd
+
+Alternatively if you're a `systemd` convert and want more control over when rclone mounts itself you can use a mount unit file. You will need to name this file after the [Where=](https://www.freedesktop.org/software/systemd/man/systemd.mount.html#Where=) directive, eg: `mnt-rclone.mount`
+
+    [Unit]
+    Description=rclone mount for remote:/path/to/remote/folder
+    Requires=systemd-networkd.service
+    Wants=network-online.target
+    After=network-online.target
+
+    [Mount]
+    What=rclonefs#remote:/path/to/remote/folder
+    Where=/mnt/rclone
+    Type=fuse
+    Options=auto,config=/home/user/.rclone.conf,allow-other,default-permissions,read-only,max-read-ahead=16M
+    TimeoutSec=30
+
+    [Install]
+    WantedBy=multi-user.target
+ 
