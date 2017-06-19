@@ -36,7 +36,13 @@ To enable mounting a volume using rclone via an entry in fstab the following hel
     # exec rclone
     trans="$trans $remote $mountpoint"
     PATH=$PATH rclone mount $trans &
-    sleep 5
+
+    out=`ls -l $dst`
+    until [ "$out" != 'total 0' ]; do
+        out=`ls -l $dst`
+        sleep 1
+    done
+
 
 Then in `/etc/fstab` you can add something like:
 
