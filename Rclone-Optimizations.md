@@ -1,4 +1,6 @@
-# Ideas for optimizations which should be documented
+# Rclone Optimizations
+
+Ideas for optimizations which should be documented in the main docs eventually.
 
 ## When to use/not use --no-traverse:
 
