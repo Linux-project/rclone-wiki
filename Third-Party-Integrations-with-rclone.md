@@ -8,7 +8,7 @@ http://www.hashbackup.com
 
 HashBackup is an efficient multi-threaded command-line backup system for Linux, FreeBSD, and OSX. 
 
-Features: scales to huge backups, multiple versions of files, file retention, combining small files into larger arc files, splitting huge files, variable-block dedup, local encryption, mountable backups (fuse), backup verification, and support for many storage systems: local disks, Amazon S3, Google Storage, Backblaze B2, Rackspace Cloud Files, WebDAV, ftp, rsync, ssh, and imap/email. Rclone can be used as a transport protocol for storage systems not natively supported by HashBackup.
+Features: scales to huge backups, multiple versions of files, file retention, combining small files into larger arc files, splitting huge files, variable-block dedup, local encryption, mountable backups (fuse), backup verification, and support for many storage systems: local disks, Amazon S3, Google Storage, Backblaze B2, Rackspace Cloud Files, WebDAV, ftp, rsync, ssh, and imap/email. Backups are sent to one or more destinations as the backup occurs and new destinations are automatically populated with earlier backup data.  Rclone can be used as a transport protocol for storage systems not natively supported by HashBackup.
 
 ## rhttpserve ##
 
