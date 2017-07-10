@@ -2,11 +2,13 @@
 
 This page documents projects which use rclone for some purpose.  If you have a project using rclone then please feel free to add a section on it here.  This should include a URL and a paragraph of description.
 
-## Hashbackup ##
+## HashBackup ##
 
 http://www.hashbackup.com
 
-HashBackup is an efficient multi-threaded command-line backup system for Linux, FreeBSD, and OSX. Features: multiple versions of files, file retention, combining small files into larger arc files, splitting huge files, variable-block dedup, local encryption, mountable backups (fuse), backup verification, and support for many "dumb" storage systems such as S3, Google, ftp, rsync, ssh, etc. Rclone is supported as a transport protocol for storage systems not natively supported by HashBackup.
+HashBackup is an efficient multi-threaded command-line backup system for Linux, FreeBSD, and OSX. 
+
+Features: scales to huge backups, multiple versions of files, file retention, combining small files into larger arc files, splitting huge files, variable-block dedup, local encryption, mountable backups (fuse), backup verification, and support for many storage systems: local disks, Amazon S3, Google Storage, Backblaze B2, Rackspace Cloud Files, WebDAV, ftp, rsync, ssh, and imap/email. Rclone can be used as a transport protocol for storage systems not natively supported by HashBackup.
 
 ## rhttpserve ##
 
