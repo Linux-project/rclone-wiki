@@ -22,3 +22,8 @@ This one is sort of "meware" in that it's largely created to be personally usefu
 
 A simple cross-platform GUI for rclone: https://mmozeiko.github.io/RcloneBrowser/
 Works on Windows, macOS and GNU/Linux.
+
+## Unified Cloud Storage ##
+
+An Android App to manage data on different cloud storage providers. It uses rclone in the background to connect to different cloud drives.
+https://play.google.com/store/apps/details?id=ch.ethz.idsc.unifiedcloudstorage
