@@ -38,3 +38,6 @@ https://play.google.com/store/apps/details?id=ch.ethz.idsc.unifiedcloudstorage
 
 ## RCloneSync ##
 [RCloneSync.py](https://github.com/cjnaz/RCloneSync) provides bi-directional sync capability utilizing rclone.  This tool was developed and debugged on Dropbox and Google Drive on Python 2.7 on Centos 7.  I run it periodically as a cron job to sync the cloud services with a local drive which is Samba-served on my LAN.  The official Dropbox and Drive services generally do not play well with network share drives.
+
+## RcloneOSX ##
+[RcloneOSX](https://github.com/rsyncOSX/rcloneosx) is a macOS GUI utilizing rclone. It is compiled with support for macOS 10.11 - macOS.13. RcloneOSX executes rclone tasks as single tasks, as batch tasks and by schedule.
