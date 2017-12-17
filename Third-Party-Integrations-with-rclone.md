@@ -41,3 +41,6 @@ https://play.google.com/store/apps/details?id=ch.ethz.idsc.unifiedcloudstorage
 
 ## RcloneOSX ##
 [RcloneOSX](https://github.com/rsyncOSX/rcloneosx) is a macOS GUI utilizing rclone. It is compiled with support for macOS 10.11 - 10.13. RcloneOSX executes rclone tasks as single tasks, as batch tasks and by schedule.
+
+## rclone4pi ##
+[Easy Raspberry Pi Curl Install and folder sync demo](https://github.com/pageauc/rclone4pi). This is an automated bash script that can be installed from a curl script onto a Raspberry Pi computer.  There is also a sample sync script that can be added as a crontab and prevents multiple instances of the script from running to avoid problems if one job does not finish before the next scheduled cron.
