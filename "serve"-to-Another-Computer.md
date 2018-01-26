@@ -41,3 +41,6 @@ tls self_signed
 3. Run `rclone serve http myremote:` or `rclone serve webdav myremote:`.  This will create the server hosting your remote, but it will only be accessible from your own computer without encryption or authentication.
 4. Run `caddy` from the directory where you put `Caddyfile`.  This will relay remote https or webdav requests, to rclone, requiring authentication, then encrypting them.  
 5. You should now be able to connect over https or webdav, on `myaddress:443`
+
+
+return [[Home]]
