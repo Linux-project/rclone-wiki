@@ -20,3 +20,5 @@ NO ADMIN NEEDED
 
 Then just add c:\rclone to your path. This only has to be done once.
 http://windowsitpro.com/systems-management/how-can-i-add-new-folder-my-system-path
+
+return [[Home]]
