@@ -44,3 +44,6 @@ https://play.google.com/store/apps/details?id=ch.ethz.idsc.unifiedcloudstorage
 
 ## rclone4pi  - Easy Install onto a Raspberry Pi
 [rclone4pi](https://github.com/pageauc/rclone4pi) includes an automated bash install script that can be run from a [curl command](https://github.com/pageauc/rclone4pi/wiki#quick-install) or [manually](https://github.com/pageauc/rclone4pi/wiki#manual-install). [Wiki](https://github.com/pageauc/rclone4pi/wiki) instructions are provided that includes setting up a [Cloud Storage Service](https://github.com/pageauc/rclone4pi/wiki#how-to-configure-a-remote-storage-service). A demo [***rclone-sync.sh***](https://github.com/pageauc/rclone4pi/blob/master/rclone-sync.sh) script is provided. It can be run manually or added as a [crontab](https://github.com/pageauc/rclone4pi/wiki#how-to-automate-rclone) and prevents multiple instances of rclone from running. This avoids running multiple instances of the same sync job.
+
+## UpBack ##
+[UpBack](https://github.com/DavideRossi/upback) is a two way synchronization utility based on rclone. It assumes a star topology for your backup, that means a remote storage that is synchronized with multiple clients (your workstation, laptop, HTPC, ...).
