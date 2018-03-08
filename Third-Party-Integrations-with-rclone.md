@@ -23,6 +23,19 @@ This one is sort of "meware" in that it's largely created to be personally usefu
 A simple cross-platform GUI for rclone: https://mmozeiko.github.io/RcloneBrowser/
 Works on Windows, macOS and GNU/Linux.
 
+## rclone_jobber ##
+
+[rclone_jobber.sh](https://github.com/wolfv6/rclone_jobber) is a Bash script that calls rclone sync to perform a backup job.
+An rclone_jobber_tutorial is provided, complete with backup-job and restore-job examples for a home computer.
+
+Features:
+move old files to dated_directory (easy to restore deleted directory),
+move old files to dated_files (easy to brows file history, like Time Machine),
+abort if job is already running (maybe previous run didn't finish),
+pop-up for error conditions,
+logging,
+free.
+
 ## Unified Cloud Storage ##
 
 An Android App to manage data on different cloud storage providers. It uses rclone in the background to connect to different cloud drives.
