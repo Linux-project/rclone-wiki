@@ -60,3 +60,6 @@ https://play.google.com/store/apps/details?id=ch.ethz.idsc.unifiedcloudstorage
 
 ## UpBack ##
 [UpBack](https://github.com/DavideRossi/upback) is a two way synchronization utility based on rclone. It assumes a star topology for your backup, that means a remote storage that is synchronized with multiple clients (your workstation, laptop, HTPC, ...).
+
+## rclone QPKG for QNAP ##
+[RClone QPKG for QNAP](https://qnapclub.eu/fr/qpkg/330) provides a QPKG to install rclone easily on your QNAP NAS.
