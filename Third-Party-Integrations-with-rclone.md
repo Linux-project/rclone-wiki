@@ -25,16 +25,15 @@ Works on Windows, macOS and GNU/Linux.
 
 ## rclone_jobber ##
 
-[rclone_jobber.sh](https://github.com/wolfv6/rclone_jobber) is a Bash script that calls rclone sync to perform a backup job.
-An rclone_jobber tutorial includes backup-job and restore-job examples for a home computer.
+[rclone_jobber.sh](https://github.com/wolfv6/rclone_jobber) is a shell script that calls rclone sync to perform a backup job.
+The rclone_jobber tutorial includes backup-job and restore-job examples for a home computer.
 
 Features:
-move old files to dated_directory (easy to restore deleted directory),
-move old files to dated_files (easy to brows file history, like Time Machine),
-abort if job is already running (maybe previous run didn't finish),
-pop-up for error conditions,
-logging,
-free.
+Options to archive old backup files in their original hierarchy,
+Abort if job is already running (maybe previous run didn't finish),
+Pop-up for error conditions,
+Logging,
+Free.
 
 ## Unified Cloud Storage ##
 
