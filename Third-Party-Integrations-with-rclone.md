@@ -25,7 +25,7 @@ Works on Windows, macOS and GNU/Linux.
 
 ## rclone_jobber ##
 
-[rclone_jobber.sh](https://github.com/wolfv6/rclone_jobber) is a shell script that calls rclone sync to perform a backup job.
+[rclone_jobber.sh](https://github.com/wolfv6/rclone_jobber) is a backup script.
 The rclone_jobber tutorial includes backup-job and restore-job examples for a home computer.
 
 Features:
