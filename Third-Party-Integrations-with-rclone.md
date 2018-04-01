@@ -26,7 +26,7 @@ Works on Windows, macOS and GNU/Linux.
 ## rclone_jobber ##
 
 [rclone_jobber.sh](https://github.com/wolfv6/rclone_jobber) is a backup script.
-The rclone_jobber tutorial includes backup-job and restore-job examples for a home computer.
+A [backup script tutorial](https://github.com/wolfv6/rclone_jobber/blob/master/rclone_jobber_tutorial.org) includes backup-job and restore-job examples for a home computer.
 
 Features:
 Options to archive old backup files in their original hierarchy,
