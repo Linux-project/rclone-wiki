@@ -3,10 +3,47 @@ By default, `rclone serve http` and `rclone serve webdav` will open a server onl
 
 ***
 
-# Option 1: Use only rclone.  No Encryption or Authentication:
+# Option 1: Use only rclone.
 **WARNING:**  This will make your remote accessible to everyone on your network, possibly the entire internet without a firewall.
 
 **NOTE:** See Option 2 for a subjectively "better" solution.
+
+If you want access control then you can use a simple username and password:
+
+```
+      --pass string                        Password for authentication.
+      --realm string                       realm for authentication (default "rclone")
+      --user string                        User name for authentication.
+```
+
+Or you can set up an htpasswd file. This is in standard apache format and supports MD5, SHA1 and BCrypt for basic authentication. Bcrypt is recommended.
+
+```
+      --htpasswd string                    htpasswd file - if not provided no authentication is done
+```
+
+To create an htpasswd file:
+
+```
+touch htpasswd
+htpasswd -B htpasswd user
+htpasswd -B htpasswd anotherUser
+The password file can be updated while rclone is running.
+```
+
+And if you want to set up a TLS certificate use these options:
+
+```
+      --cert string                        SSL PEM key (concatenation of certificate and CA certificate)
+      --key string                         SSL PEM Private key
+```
+
+Or if you want to use client authentication:
+
+```
+      --client-ca string                   Client certificate authority to verify clients with
+
+```
 
 ## HTTP
 Assuming your current command is: `rclone serve http remote:`
