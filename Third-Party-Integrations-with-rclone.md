@@ -59,3 +59,6 @@ https://play.google.com/store/apps/details?id=ch.ethz.idsc.unifiedcloudstorage
 
 ## UpBack ##
 [UpBack](https://github.com/DavideRossi/upback) is a two way synchronization utility based on rclone. It assumes a star topology for your backup, that means a remote storage that is synchronized with multiple clients (your workstation, laptop, HTPC, ...).
+
+## Rclone Explorer ##
+[Rclone Explorer](https://github.com/kaczmarkiewiczp/rcloneExplorer) is an Android application for rclone. It's capable of displaying remote content, uploading and downloading files, opening and streaming files, file editing (move, rename, delete), as well as serving remotes over HTTP.
