@@ -62,3 +62,6 @@ https://play.google.com/store/apps/details?id=ch.ethz.idsc.unifiedcloudstorage
 
 ## Rclone Explorer ##
 [Rclone Explorer](https://github.com/kaczmarkiewiczp/rcloneExplorer) is an Android application for rclone. It's capable of displaying remote content, uploading and downloading files, opening and streaming files, file editing (move, rename, delete), as well as serving remotes over HTTP.
+
+## vim-netranger (beta) ##
+[vim-netranger](https://github.com/ipod825/vim-netranger) is a [ranger](https://github.com/ranger/ranger)-like system/cloud tui file browser for Vim/Neovim. It supports basic file operations (cp, mv, rename, delete) for both local files and any remote file supported by rclone.
