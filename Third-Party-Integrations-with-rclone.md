@@ -48,8 +48,8 @@ https://play.google.com/store/apps/details?id=ch.ethz.idsc.unifiedcloudstorage
 
 [PlexInTheCloud](https://github.com/chrisanthropic/PlexInTheCloud) is a series of bash scripts to install & configure: Plex, nzbget, sickrage, couchpotato, mylar, with rclone mounted Google Drive storage and full post-processing on your VPS (virtual private server). Includes a wiki with clear documentation
 
-## RCloneSync ##
-[RCloneSync.py](https://github.com/cjnaz/RCloneSync) provides bi-directional sync capability utilizing rclone.  This tool was developed and debugged on Dropbox and Google Drive on Python 2.7 on Centos 7.  I run it periodically as a cron job to sync the cloud services with a local drive which is Samba-served on my LAN.  The official Dropbox and Drive services generally do not play well with network share drives.
+## rclonesync V2 ##
+[rclonesync.py](https://github.com/cjnaz/rclonesync-V2) provides bi-directional sync capability utilizing delta checks (new, newer, deleted) on the Remote and Local filesystems.  Several safety checks are implemented to protect against accidental data loss, including filesystem access health checks and `--max-deletes` limits.  rclonesync works with both Python 2.7 and 3.x.  I run it periodically as a cron job to sync the cloud services with a local drive which is Samba-served on my LAN.  Note that the official Dropbox and Drive services generally do not play well with network shared filesystems, and rclonesync solves this problem.
 
 ## RcloneOSX ##
 [RcloneOSX](https://github.com/rsyncOSX/rcloneosx) is a macOS GUI utilizing rclone. It is compiled with support for macOS 10.11 - 10.13. RcloneOSX executes rclone tasks as single tasks, as batch tasks and by schedule.
