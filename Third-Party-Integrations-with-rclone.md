@@ -65,3 +65,6 @@ https://play.google.com/store/apps/details?id=ch.ethz.idsc.unifiedcloudstorage
 
 ## vim-netranger (beta) ##
 [vim-netranger](https://github.com/ipod825/vim-netranger) is a [ranger](https://github.com/ranger/ranger)-like system/cloud tui file browser for Vim/Neovim. It supports basic file operations (cp, mv, rename, delete) for both local files and any remote file supported by rclone.
+
+## Polo File Manager ##
+[Polo File Manager](https://teejee2008.github.io/polo/) is an advanced file manager for Linux written in Vala. It supports multiple panes (single, dual, quad) with multiple tabs in each pane, archive creation, extraction and browsing, cloud storage access via rclone, running and managing KVM images, modifying PDF documents and image files, booting ISO files in KVM, and writing ISO files to USB drives.
