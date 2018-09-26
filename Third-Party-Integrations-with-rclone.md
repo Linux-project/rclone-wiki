@@ -68,3 +68,6 @@ https://play.google.com/store/apps/details?id=ch.ethz.idsc.unifiedcloudstorage
 
 ## Polo File Manager ##
 [Polo File Manager](https://teejee2008.github.io/polo/) is an advanced file manager for Linux written in Vala. It supports multiple panes (single, dual, quad) with multiple tabs in each pane, archive creation, extraction and browsing, cloud storage access via rclone, running and managing KVM images, modifying PDF documents and image files, booting ISO files in KVM, and writing ISO files to USB drives.
+
+## python-rclone
+[python-rclone](https://pypi.org/project/python-rclone/) is a python client library for rclone. 
