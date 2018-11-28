@@ -23,6 +23,10 @@ This one is sort of "meware" in that it's largely created to be personally usefu
 A simple cross-platform GUI for rclone: https://mmozeiko.github.io/RcloneBrowser/
 Works on Windows, macOS and GNU/Linux.
 
+## rcloneExplorer ##
+
+Android client for browsing rclone, including encrypted remotes: https://github.com/kaczmarkiewiczp/rcloneExplorer
+
 ## rclone_jobber ##
 
 [rclone_jobber.sh](https://github.com/wolfv6/rclone_jobber) is a backup script.
