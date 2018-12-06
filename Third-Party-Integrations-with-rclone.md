@@ -74,4 +74,14 @@ https://play.google.com/store/apps/details?id=ch.ethz.idsc.unifiedcloudstorage
 [Polo File Manager](https://teejee2008.github.io/polo/) is an advanced file manager for Linux written in Vala. It supports multiple panes (single, dual, quad) with multiple tabs in each pane, archive creation, extraction and browsing, cloud storage access via rclone, running and managing KVM images, modifying PDF documents and image files, booting ISO files in KVM, and writing ISO files to USB drives.
 
 ## python-rclone
-[python-rclone](https://pypi.org/project/python-rclone/) is a python client library for rclone. 
+[python-rclone](https://pypi.org/project/python-rclone/) is a python client library for rclone.
+
+## Sprinkle
+[Sprinkle](https://mmontuori.github.io/sprinkle/) is a volume clustering utility. It presents all the RClone available volumes as a single clustered volume. It supports 1-way sync mainly for
+backup and recovery. Sprinkle uses the excellent [RClone](https://rclone.org) software for cloud volume access.
+Features:
+* Consolidate multiple cloud drives into a single virtual drive
+* Sprinkle your backup across multiple cloud drives
+* Minimize cost by stacking multiple free cloud drives into single one
+* Run as Unix daemon with custom schedules for seamless backups of important files
+* Developed in Python for extreme multi-platform flexibility
