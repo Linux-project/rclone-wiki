@@ -79,4 +79,9 @@ https://play.google.com/store/apps/details?id=ch.ethz.idsc.unifiedcloudstorage
 ## Sprinkle
 [Sprinkle](https://mmontuori.github.io/sprinkle/) is a volume clustering utility. It presents all the RClone available volumes as a single clustered volume. It supports 1-way sync mainly for
 backup and recovery. Sprinkle uses the excellent [RClone](https://rclone.org) software for cloud volume access.
-Features: consolidate multiple cloud drives into a single virtual drive, sprinkle your backup across multiple cloud drives, minimize cost by stacking multiple free cloud drives into single one, run as Unix daemon with custom schedules for seamless backups of important files, developed in Python for extreme multi-platform flexibility.
+Features:
+* Consolidate multiple cloud drives into a single virtual drive
+* Sprinkle your backup across multiple cloud drives
+* Minimize cost by stacking multiple free cloud drives into single one
+* Run as Unix daemon with custom schedules for seamless backups of important files
+* Developed in Python for extreme multi-platform flexibility
