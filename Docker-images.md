@@ -18,6 +18,7 @@ Use rclone mount to make your cloud storage available for containers and your ho
 
 # openbridge/ob_bulkstash
 https://github.com/openbridge/ob_bulkstash
+https://hub.docker.com/r/openbridge/ob_bulkstash/
 
 1. [rclone](https://blog.openbridge.com/rclone-keep-an-eye-on-your-files-with-bulk-batch-processing-for-amazon-google-dropbox-and-other-5488b063b2a5) is neatly packed into a Docker image that can be run anywhere Docker can be installed.
 2. The container uses Alpine Linux which makes it light and efficient. The image size is < 26mb.
@@ -25,7 +26,7 @@ https://github.com/openbridge/ob_bulkstash
 4. The container also uses Monit to ensure that long running processes are monitored under process management. For example, Monit will make sure crond is running in the background and will restart it if it crashed. You can extend Monit to monitor folders, check for file sizes and many other.
 5. Configuration can be stored and managed outside the container. Configurations can also be inserted at runtime manually or via a controller script/app
 6. You can run a collection of containers running independent tasks via config files. This means you can wrap the Docker service with other apps like bash, python and so forth on your host
-7. You can setup things like Amazon Lambda and ECS tasks to control the runtime tasks. Configurations can be encrypted and stored in a service like AWS KMS. Configuration attributes can then be provided by an end user via a front-end web app. For example, you can have a form that collects all the S3 or Google OAuth tokens. A front end is not include :)
+7. You can set up things like Amazon Lambda and ECS tasks to control the runtime tasks. Configurations can be encrypted and stored in a service like AWS KMS. Configuration attributes can then be provided by an end user via a front-end web app. For example, you can have a form that collects all the S3 or Google OAuth tokens. A front end is not included :)
 
 # tynor88/rclone
 https://hub.docker.com/r/tynor88/rclone/
