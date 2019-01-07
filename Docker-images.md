@@ -17,8 +17,9 @@ https://hub.docker.com/r/mumiehub/rclone-mount/
 Use rclone mount to make your cloud storage available for containers and your host.
 
 # openbridge/ob_bulkstash
-https://github.com/openbridge/ob_bulkstash
-https://hub.docker.com/r/openbridge/ob_bulkstash/
+Github: https://github.com/openbridge/ob_bulkstash
+
+Docker Hub: https://hub.docker.com/r/openbridge/ob_bulkstash/
 
 1. [rclone](https://blog.openbridge.com/rclone-keep-an-eye-on-your-files-with-bulk-batch-processing-for-amazon-google-dropbox-and-other-5488b063b2a5) is neatly packed into a Docker image that can be run anywhere Docker can be installed.
 2. The container uses Alpine Linux which makes it light and efficient. The image size is < 26mb.
