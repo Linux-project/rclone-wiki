@@ -38,3 +38,8 @@ Docker image to run copy/sync rcloner image.
 https://hub.docker.com/r/tynor88/rclone-mount/
 
 Docker image to use FUSE mount feature exposable to host and other containers. [docs](https://forums.lime-technology.com/topic/56921-support-rclone-mount-with-exposable-fuse-support-for-plex-beta/)
+
+# rayou/rclone
+https://hub.docker.com/r/rayou/rclone
+
+minimal docker image, configure it whatever you like.
