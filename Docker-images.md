@@ -1,4 +1,4 @@
-This an alphabetically list of community driven docker images to run rclone in different scenarios.
+This is an alphabetical list of community-driven docker images that run rclone in different scenarios.
 
 
 
