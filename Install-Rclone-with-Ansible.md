@@ -17,3 +17,14 @@ OSes with Rclone in the package manager (and supported by this role) are:
 * Windows
 
 The other distributions are supported via site download.
+
+## Example
+
+You can use this playbook to install rclone on a given set of hosts, in this case under the [rclone] section on the ansible hosts file.
+
+```yaml
+- name: Install rclone
+  hosts: rclone
+  roles:
+     - { role: charliemaiors.rclone-ansible }
+```
