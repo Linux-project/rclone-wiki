@@ -1,5 +1,7 @@
 This is an alphabetical list of community-driven docker images that run rclone in different scenarios.
 
+As these are not maintained by the rclone project please check that they have an up to date version of rclone before using.
+
 
 
 
