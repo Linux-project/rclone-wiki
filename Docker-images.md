@@ -5,8 +5,10 @@ As these are not maintained by the rclone project please check that they have an
 
 
 
-# bcardiff/rclone
-https://hub.docker.com/r/bcardiff/rclone/
+# bcardiff/rclone or pfidr/rclone
+https://hub.docker.com/r/bcardiff/rclone/ or https://hub.docker.com/r/pfidr/rclone/
+
+**pfidr/rclone has all outstanding issues resolved and is running up to date rclone version**
 
 1. schedule sync with a cron, but also
 2. limit the time windows the sync should be running,
