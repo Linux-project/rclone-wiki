@@ -81,3 +81,17 @@ Features:
 * Minimize cost by stacking multiple free cloud drives into single one
 * Run as Unix daemon with custom schedules for seamless backups of important files
 * Developed in Python for extreme multi-platform flexibility
+
+## PyFiSync
+
+[PyFiSync](https://github.com/Jwink3101/PyFiSync) is a Python-based utility to provide robust bi-directional sync on macOS/Unix/Linux platforms. As of version `20190509.0`, PyFiSync can support rclone-based remotes as long as they support ModTime. (It can also support rsync-based remotes for improved transfer efficiency when not used with rclone). rclone (or rsync) is used as a file transfer while sync logic occurs in Python.
+
+Features:
+
+* Robust file tracking including moves and deletes
+* All files to be deleted or overwritten are backed up *before* any destructive opperations occur
+* While sync is not atomic, interruptions or failures result in a recoverable state (see the [FAQs](https://github.com/Jwink3101/PyFiSync/blob/rclone/FAQs.md) for an enumeration of situations)
+* *Extensive* test suite including a huge number of edge cases and odd situations
+* Tested on Python 2.7.16 and 3.6.8
+* No dependancies besides rclone
+
