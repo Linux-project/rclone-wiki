@@ -89,7 +89,7 @@ Features:
 Features:
 
 * Robust file tracking including moves and deletes
-* All files to be deleted or overwritten are backed up *before* any destructive opperations occur
+* All files to be deleted or overwritten are backed up *before* any destructive operations occur
 * While sync is not atomic, interruptions or failures result in a recoverable state (see the [FAQs](https://github.com/Jwink3101/PyFiSync/blob/rclone/FAQs.md) for an enumeration of situations)
 * *Extensive* test suite including a huge number of edge cases and odd situations
 * Tested on Python 2.7.16 and 3.6.8
