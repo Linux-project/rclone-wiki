@@ -57,7 +57,7 @@ Assuming your current command is:
 `rclone serve webdav remote:`
 
 You can change it to:
-`rclone serve http --addr :8081 remote:`
+`rclone serve webdav --addr :8081 remote:`
 
 Your remote will now be accessible on your ip on port 8081
 
