@@ -35,7 +35,7 @@ To enable mounting a volume using rclone via an entry in fstab the following hel
 
     # exec rclone
     trans="$trans $remote $mountpoint"
-    PATH=$PATH rclone mount $trans &
+    PATH=$PATH rclone mount $trans </dev/null >/dev/null 2>/dev/null &
 
     out=`ls -l $dst`
     until [ "$out" != 'total 0' ]; do
@@ -53,6 +53,13 @@ Obviously, replace `/home/user/.rclone.conf` with the path to your config and re
 #### Important:
 - rclonefs wrapper has to be in the PATH=/usr/local/bin:/usr/bin. mount is suid and doesn't ignores pre-set PATHs. Similarly, rclone invocation fails to find fusermount if not invoked with PATH=$PATH explicitly set.
 
+## autofs
+
+You can use the above mount wrapper with autofs, but note you **must** supply the `--allow-non-empty` option otherwise autofs will lock up entering the mount (see [#3246](https://github.com/ncw/rclone/issues/3246)).
+
+An example config entry for autofs might look like this:
+
+    remote	-fstype=fuse,config=/home/USER/.config/rclone/rclone.conf,allow-other,allow-non-empty	:rclonefs#remote:
 
 ## systemd
 
