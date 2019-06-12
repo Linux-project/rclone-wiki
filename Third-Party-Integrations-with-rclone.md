@@ -48,6 +48,26 @@ https://play.google.com/store/apps/details?id=ch.ethz.idsc.unifiedcloudstorage
 
 [PlexInTheCloud](https://github.com/chrisanthropic/PlexInTheCloud) is a series of bash scripts to install & configure: Plex, nzbget, sickrage, couchpotato, mylar, with rclone mounted Google Drive storage and full post-processing on your VPS (virtual private server). Includes a wiki with clear documentation
 
+## rsinc ##
+
+_A tiny, hackable, two-way cloud synchronisation client for Linux_
+
+[Rsinc](https://github.com/ConorWilliams/rsinc) extends rclone to two-way / bi-directional synchronisation. Rsinc tracks file moves and saves bandwidth. Rsinc uses only file hashes and sizes to track files thus avoiding unreliable time stamps. 
+
+Features:
+
+* Robust two-way syncing 
+* Tracks file moves and performs compound move/updates
+* **Selective** syncing for improved speed and fine control
+* Recovery mode
+* Dry-run mode 
+* Crash detection and recovery
+* Automatic first run detection and resolution
+* Uses file hashes to track changes
+* Case checking for clouds (OneDrive) that are case insensitive
+* Detailed logging
+
+
 ## rclonesync V2 ##
 [rclonesync.py](https://github.com/cjnaz/rclonesync-V2) provides bi-directional sync capability utilizing delta checks (new, newer, deleted) on the Remote and Local filesystems.  Several safety checks are implemented to protect against accidental data loss, including filesystem access health checks and `--max-deletes` limits.  rclonesync works with both Python 2.7 and 3.x.  I run it periodically as a cron job to sync the cloud services with a local drive which is Samba-served on my LAN.  Note that the official Dropbox and Drive services generally do not play well with network shared filesystems, and rclonesync solves this problem.
 
