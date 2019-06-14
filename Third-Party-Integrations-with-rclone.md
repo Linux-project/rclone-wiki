@@ -105,7 +105,7 @@ _A tiny, hackable, two-way cloud synchronisation client for Linux_
 
 Features:
 
-* Robust two-way syncing 
+* Two-way syncing 
 * Tracks file moves and performs compound move/updates
 * **Selective** syncing for improved speed and fine control
 * Recovery mode
