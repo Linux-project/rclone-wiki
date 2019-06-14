@@ -112,8 +112,9 @@ Features:
 * Dry-run mode 
 * Crash detection and recovery
 * Automatic first run detection and resolution
+* Git-like `.rignore` system supporting regular expressions for ignoring files
 * Uses file hashes to track changes
 * Case checking for clouds (OneDrive) that are case insensitive
-* Detailed logging
+* Colourful CLI
 
 
