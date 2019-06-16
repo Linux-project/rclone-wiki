@@ -26,7 +26,7 @@ Github: https://github.com/openbridge/ob_bulkstash
 Docker Hub: https://hub.docker.com/r/openbridge/ob_bulkstash/
 
 1. [rclone](https://blog.openbridge.com/rclone-keep-an-eye-on-your-files-with-bulk-batch-processing-for-amazon-google-dropbox-and-other-5488b063b2a5) is neatly packed into a Docker image that can be run anywhere Docker can be installed.
-2. The container uses Alpine Linux which makes it light and efficient. The image size is < 26mb.
+2. The container uses Alpine Linux which makes it light and efficient. The image size is < 20mb.
 3. The image is designed to take advantage of recent support in rclone to utilize environment variables. This means you don't have to step through the typical config initialization process.
 4. The container also uses Monit to ensure that long running processes are monitored under process management. For example, Monit will make sure crond is running in the background and will restart it if it crashed. You can extend Monit to monitor folders, check for file sizes and many other.
 5. Configuration can be stored and managed outside the container. Configurations can also be inserted at runtime manually or via a controller script/app
