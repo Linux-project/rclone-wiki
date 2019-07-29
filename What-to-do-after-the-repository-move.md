@@ -24,7 +24,7 @@ git remote set-url origin git@github.com:rclone/rclone.git
 Test with
 
 ```
-git co master
+git checkout master
 git pull
 ```
 
@@ -33,7 +33,7 @@ You will need to pull to get the code to build again.
 If you are working on a branch say `myfeature` then you will need to rebase it on master
 
 ```
-git co myfeature
+git checkout myfeature
 git rebase master
 # fix conflicts
 ```
