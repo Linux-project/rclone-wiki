@@ -23,6 +23,10 @@ This one is sort of "meware" in that it's largely created to be personally usefu
 A simple cross-platform GUI for rclone: https://mmozeiko.github.io/RcloneBrowser/
 Works on Windows, macOS and GNU/Linux.
 
+NOTE: while Martin Mozeiko has not abandoned the code, he showed he is not actually maintaining it.
+There have been some clones/forks, and have kept more or less alive the browser.
+Last clone at 20190826 here https://github.com/kapitainsky/RcloneBrowser/releases
+
 ## rclone_jobber ##
 
 [rclone_jobber.sh](https://github.com/wolfv6/rclone_jobber) is a backup script.
