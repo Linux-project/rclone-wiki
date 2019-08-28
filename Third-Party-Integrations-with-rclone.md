@@ -124,4 +124,6 @@ Features:
 * Case checking for clouds (OneDrive) that are case insensitive
 * Colourful CLI
 
+## Docker images ##
 
+See https://github.com/rclone/rclone/wiki/Docker-images
