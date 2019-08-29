@@ -25,9 +25,14 @@ Works on Windows, macOS and GNU/Linux.
 
 NOTE: while Martin Mozeiko seems that has not abandoned the code, he showed also he is not actually maintaining it.
 There have been some clones/forks, and have kept more or less alive the browser.
-Last clone at 20190826 here https://github.com/kapitainsky/RcloneBrowser/releases
+Last clone at 20190826 here https://github.com/kapitainsky/RcloneBrowser/releases (based on DinCahill fork)
+There is also https://github.com/noabody/RcloneBrowser (based on DinCahill fork)
 
-There seems to be also a "Docker container including RClone Browser with GUI interface" - https://hub.docker.com/r/romancin/rclonebrowser/ - Unknown if this is MMozeiko based Rlcone Browser or any other fresh sw.
+https://github.com/DinCahill/RcloneBrowser (based on AndyIbanez fork)
+
+https://github.com/AndyIbanez/RcloneBrowser (fork of MMozeiko founding code)
+
+There is a "Docker container including RClone Browser with GUI interface" - https://hub.docker.com/r/romancin/rclonebrowser/ - it is based in noabody fork.
 
 ## rclone_jobber ##
 
