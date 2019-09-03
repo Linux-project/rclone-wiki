@@ -14,3 +14,9 @@ If you are copying {a,b,c,d,e,f} to the destination, then rclone will check each
 
 So there are tradeoffs! The new sync method implemented in 1.36 makes --no-traverse less useful than it used to be, but it can still come in handy, especially if you are moving or copying files into a deep hierarchy.
 
+## How to run on a micro instance
+
+RClone on a micro instance with less than a gig of memory may crash. Here is what you can do:
+* type `export GOGC=20` before running rclone.
+* remove `--fast-list`
+* lower the value of `--transfers=`
