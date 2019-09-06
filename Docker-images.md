@@ -1,9 +1,8 @@
-This is an alphabetical list of community-driven docker images that run rclone in different scenarios.
+Rclone has an official docker image: [rclone/rclone](https://hub.docker.com/r/rclone/rclone) now.  This is a rclone installed on a lightweight Alpine linux.  This is autobuilt on releases (`latest` tag) and on pushes to master (`beta` tag).
+
+This is an alphabetical list of community-driven docker images that run rclone for different scenarios.
 
 As these are not maintained by the rclone project please check that they have an up to date version of rclone before using.
-
-
-
 
 # bcardiff/rclone or pfidr/rclone
 https://hub.docker.com/r/bcardiff/rclone/ or https://hub.docker.com/r/pfidr/rclone/
