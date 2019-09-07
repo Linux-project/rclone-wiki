@@ -69,7 +69,7 @@ Most Windows computer hard drives will not have free space to create a new drive
 
     call setvar-vshadow.cmd
     mklink /d b:\snapshot\ %shadow_device_1%\
-    rclone sync b:\snapshot\ dest:thetestfolder
+    rclone sync b:\snapshot\ dest:snapshot
     rmdir b:\snapshot\ /q
 
 Good luck and if you have any questions or comments, please do not hesitate to contact me.
