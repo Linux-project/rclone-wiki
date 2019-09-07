@@ -38,7 +38,7 @@ To make it useful for rclone, change exec.cmd to the 4 lines of code below and t
 
     call setvar-vshadow.cmd
     mklink /d c:\snapshot\ %shadow_device_1%\
-    rclone sync c:\snapshot\ wasabiwest01:snapshot
+    rclone sync c:\snapshot\ dest:snapshot
     rmdir c:\snapshot\ /q
 
 I find it confusing, that c:\snapshot\ is a mirror image of c:\.
@@ -50,7 +50,7 @@ So I will give you 3 workarounds for clear code for exec.cmd.
     call setvar-vshadow.cmd
     mklink /d c:\snapshot\ %shadow_device_1%\ 
     subst t: c:\
-    rclone sync t:\snapshot\ wasabiwest01:snapshot
+    rclone sync t:\snapshot\ dest:snapshot
     subst t: /delete
     rmdir c:\snapshot\ /q
 
@@ -59,7 +59,7 @@ So I will give you 3 workarounds for clear code for exec.cmd.
     call setvar-vshadow.cmd
     mklink /d c:\snapshot\ %shadow_device_1%\ 
     net share snapshot=c:\
-    rclone sync \\localhost\snapshot\ wasabiwest01:snapshot
+    rclone sync \\localhost\snapshot\ dest:snapshot
     net share snapshot /delete
     rmdir c:\snapshot\ /q
 
@@ -69,7 +69,7 @@ Most Windows computer hard drives will not have free space to create a new drive
 
     call setvar-vshadow.cmd
     mklink /d b:\snapshot\ %shadow_device_1%\
-    rclone sync b:\snapshot\ wasabiwest01:thetestfolder
+    rclone sync b:\snapshot\ dest:thetestfolder
     rmdir b:\snapshot\ /q
 
 Good luck and if you have any questions or comments, please do not hesitate to contact me.
