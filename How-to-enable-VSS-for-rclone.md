@@ -59,7 +59,7 @@ So I will give you 3 workarounds for clear code for exec.cmd.
     call setvar-vshadow.cmd
     mklink /d c:\snapshot\ %shadow_device_1%\ 
     net share snapshot=c:\
-    rclone sync \\localhost\snapshot\ wasabiwest01:thetestfolder
+    rclone sync \\localhost\snapshot\ wasabiwest01:snapshot
     net share snapshot /delete
     rmdir c:\snapshot\ /q
 
