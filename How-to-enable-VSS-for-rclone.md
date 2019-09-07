@@ -21,7 +21,7 @@ The following example is the bare minimum, just enough code to create a snapshot
 2 - Create a file named exec.cmd file with 2 lines of code.
 
     call setvar-vshadow.cmd
-    mklink /d c:\vs\ %shadow_device_1%\
+    mklink /d c:\snapshot\ %shadow_device_1%\
 
 Execute vs.cmd and that is all it takes to create a shadow mount.
 When vs.cmd is run, it will execute vshadow.exe.
@@ -39,29 +39,29 @@ To make it useful for rclone, change exec.cmd to the 4 lines of code below and t
     call setvar-vshadow.cmd
     mklink /d c:\snapshot\ %shadow_device_1%\
     rclone sync c:\snapshot\thetestfolder\ wasabiwest01:thetestfolder
-    rmdir c:\vs\ /q
+    rmdir c:\snapshot\ /q
 
 I find it confusing, that c:\snapshot\ is a mirror image of c:\.
 I found that when writing more complex scripts, this confusion was leading to errors.
-So I will give you three workarounds for clear code for exec.cmd.
+So I will give you 3 workarounds for clear code for exec.cmd.
 
 --- Use SUBST command.
 
     call setvar-vshadow.cmd
-    mklink /d c:\vs\ %shadow_device_1%\ 
+    mklink /d c:\snapshot\ %shadow_device_1%\ 
     subst t: c:\
-    rclone sync t:\vs\thetestfolder\ wasabiwest01:thetestfolder
+    rclone sync t:\snapshot\thetestfolder\ wasabiwest01:thetestfolder
     subst t: /delete
-    rmdir b:\vs\ /q
+    rmdir c:\snapshot\ /q
 
 --- Use NET USE command
 
     call setvar-vshadow.cmd
-    mklink /d c:\vs\ %shadow_device_1%\ 
+    mklink /d c:\snapshot\ %shadow_device_1%\ 
     net share snapshot=c:\
-    rclone sync \\localhost\snapshot\vs\thetestfolder\ wasabiwest01:thetestfolder
+    rclone sync \\localhost\snapshot\thetestfolder\ wasabiwest01:thetestfolder
     net share snapshot /delete
-    rmdir c:\vs\ /q
+    rmdir c:\snapshot\ /q
 
 --- Create a new drive letter. This is what I do as this is the most reliable and least code needed.
 Create a new drive and use that for the mount point.
@@ -70,7 +70,7 @@ Most Windows computer hard drives will not have free space to create a new drive
     call setvar-vshadow.cmd
     mklink /d b:\snapshot\ %shadow_device_1%\
     rclone sync b:\snapshot\thetestfolder\ wasabiwest01:thetestfolder
-    rmdir b:\vs\ /q
+    rmdir b:\snapshot\ /q
 
 Good luck and if you have any questions or comments, please do not hesitate to contact me.
 Create a post at the forum and put the "VSS question" in the subject and I will answer.
