@@ -40,9 +40,11 @@ exec.cmd will:
 2. Create a symbolc link to the snapshot.
 3. Run rclone with the source as c:\snapshot\data\, not c:\data\.
 4. Delete the symbolc link.
+
 Note that c:\snapshot\ is a temporaty link only accessible while exec.cmd is running. when exec.cmd exits, the snapshot is removed by Windows operating system.
 
-I find it confusing, that c:\snapshot\ is a mirror image of c:\; when writing more complex scripts, this confusion was leading to errors.
+I find it confusing, that c:\snapshot\ is a mirror image of c:\.
+When I was writing more complex scripts, this confusion was leading to errors.
 So I will give you 3 workarounds for clear code for exec.cmd.
 
 --- Use SUBST command.
