@@ -24,9 +24,16 @@ Let's say that I want to sync c:\data\ to the cloud.
 
 2 - Create a file named exec.cmd file:
 
+    rem Call setvars.cmd, to load the variables created by vshadow.exe.
     call setvars.cmd
+
+    rem Create the symbolc link to the snapshot.
     mklink /d c:\snapshot\ %shadow_device_1%\
+
+    rem Run rclone with the source as c:\snapshot\data\, not c:\data\.
     rclone sync c:\snapshot\data\ dest:data
+
+    rem Delete the symbolc link.
     rmdir c:\snapshot\ /q
 
 That is all it takes to create a shadow mount.
@@ -36,12 +43,6 @@ vshadow.exe will:
 1. Create a file named setvars.cmd with some variables that needs to be passed to exec.cmd.
 2. Create the snapshot.
 3. Execute exec.cmd.
-
-exec.cmd will:
-1. Call setvars.cmd, to load the variables created by vshadow.exe.
-2. Create a symbolc link to the snapshot.
-3. Run rclone with the source as c:\snapshot\data\, not c:\data\.
-4. Delete the symbolc link.
 
 Note that c:\snapshot\ is a temporaty link only accessible while exec.cmd is running. when exec.cmd exits, the snapshot is removed by Windows operating system.
 
