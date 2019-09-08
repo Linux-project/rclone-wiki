@@ -68,7 +68,7 @@ So I will give you 3 workarounds for clear code for exec.cmd.
 
 --- Create a new drive letter. This is what I do as this is the most reliable and least code needed.
 Create a new drive and use that for the mount point.
-Most Windows computer hard drives will not have free space to create a new drive. So shrink your c: drive by just 1GB and use that space to create new partition and name it the b: drive. Since the b: drive will only be used to mount the vss point, 1GB is plenty of space, in fact 1MB is enough space.
+Most computers will not have free space to create a new drive. So shrink your c: drive by just 1MB and use that space to create new partition and name it the b: drive. Since the b: drive will only be used to mount the vss point, 1MB is plenty of space.
 
     call setvar.cmd
     mklink /d b:\snapshot\ %shadow_device_1%\
