@@ -38,7 +38,7 @@ vshadow.exe will:
 3. Execute exec.cmd.
 
 exec.cmd will:
-1. Call setvars.cmd, to load the variiables created by vshadow.exe.
+1. Call setvars.cmd, to load the variables created by vshadow.exe.
 2. Create a symbolc link to the snapshot.
 3. Run rclone with the source as c:\snapshot\data\, not c:\data\.
 4. Delete the symbolc link.
