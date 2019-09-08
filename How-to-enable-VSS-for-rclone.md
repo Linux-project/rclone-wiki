@@ -24,13 +24,13 @@ Let's say that we want to sync c:\data\ to the cloud.
 
 2 - Create a file named exec.cmd file:
 
-    rem load the the variables created by vshadow.exe
+    rem Load the the variables created by vshadow.exe
     call setvars.cmd
 
-    rem create the symbolic link to the snapshot
+    rem Create the symbolic link to the snapshot
     mklink /d c:\snapshot\ %shadow_device_1%\
 
-    rem run rclone with the source as c:\snapshot\data\, not c:\data\
+    rem Execute rclone with the source as c:\snapshot\data\, not c:\data\
     rclone sync c:\snapshot\data\ dest:data
 
     rem Delete the symbolic link
