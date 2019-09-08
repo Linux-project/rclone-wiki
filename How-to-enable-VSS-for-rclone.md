@@ -19,11 +19,11 @@ Let's say that I want to sync c:\data\ to the cloud.
 
 1 - Create a file named vs.cmd:
 
-    vshadow.exe -nw -script=setvar-vshadow.cmd -exec=exec.cmd c:
+    vshadow.exe -nw -script=setvar.cmd -exec=exec.cmd c:
 
 2 - Create a file named exec.cmd file:
 
-    call setvar-vshadow.cmd
+    call setvar.cmd
     mklink /d c:\snapshot\ %shadow_device_1%\
     rclone sync c:\snapshot\data\ dest:data
     rmdir c:\snapshot\ /q
@@ -50,7 +50,7 @@ So I will give you 3 workarounds for clear code for exec.cmd.
 
 --- Use SUBST command.
 
-    call setvar-vshadow.cmd
+    call setvar.cmd
     mklink /d c:\snapshot\ %shadow_device_1%\ 
     subst t: c:\
     rclone sync t:\snapshot\data\ dest:data
@@ -59,7 +59,7 @@ So I will give you 3 workarounds for clear code for exec.cmd.
 
 --- Use NET USE command
 
-    call setvar-vshadow.cmd
+    call setvar.cmd
     mklink /d c:\snapshot\ %shadow_device_1%\ 
     net share snapshot=c:\
     rclone sync \\localhost\snapshot\data\ dest:data
@@ -70,7 +70,7 @@ So I will give you 3 workarounds for clear code for exec.cmd.
 Create a new drive and use that for the mount point.
 Most Windows computer hard drives will not have free space to create a new drive. So shrink your c: drive by just 1GB and use that space to create new partition and name it the b: drive. Since the b: drive will only be used to mount the vss point, 1GB is plenty of space, in fact 1MB is enough space.
 
-    call setvar-vshadow.cmd
+    call setvar.cmd
     mklink /d b:\snapshot\ %shadow_device_1%\
     rclone sync b:\snapshot\data\ dest:data
     rmdir b:\snapshot\ /q
