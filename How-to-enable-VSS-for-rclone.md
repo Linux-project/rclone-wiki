@@ -9,8 +9,12 @@ If Veeam backup software would run again while rclone is still uploading, Veeam 
 
 So I create a VSS read-only point-in-time snapshot and have rclone use that as the source.
 Now rclone can takes its time, upload, sync, check or whatever and not be concerned that the data will be modified.
+1. The snapshot data is read-only. Attempting to delete a file will generate a read-only error.
+2. The snapshot data is never in-use. rclone will not get an error about in-use files.
+3. The snapshot data is never locked. rclone will not get an error about locked files.
 
 Yeah, you want that, you know you need that, and you can have it with a few lines of code.  
+
 Let's say that I want to sync c:\data\ to the cloud.
 1 - Create a file named vs.cmd:
 
@@ -36,10 +40,7 @@ exec.cmd will:
 2. Create a symbolc link to the snapshot.
 3. Run rclone with the source as c:\snapshot\data\, not c:\data\.
 4. Delete the symbolc link.
-Note that:
-1. c:\snapshot is read-only, trying to delete a file will generate an error.
-2. All the files are readable, you will not get errors about in-use or locked files.
-3. c:\snapshot is a temporaty link only accessible while exec.cmd is running. when exec.cmd exits, the link is removed by Windows operating system.
+Note that c:\snapshot\ is a temporaty link only accessible while exec.cmd is running. when exec.cmd exits, the snapshot is removed by Windows operating system.
 
 I find it confusing, that c:\snapshot\ is a mirror image of c:\; when writing more complex scripts, this confusion was leading to errors.
 So I will give you 3 workarounds for clear code for exec.cmd.
