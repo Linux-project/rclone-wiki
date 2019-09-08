@@ -16,6 +16,7 @@ Now rclone can takes its time, upload, sync, check or whatever and not be concer
 Yeah, you want that, you know you need that, and you can have it with a few lines of code.  
 
 Let's say that I want to sync c:\data\ to the cloud.
+
 1 - Create a file named vs.cmd:
 
     vshadow.exe -nw -script=setvar-vshadow.cmd -exec=exec.cmd c:
