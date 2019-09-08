@@ -14,7 +14,9 @@ Now rclone can takes its time, upload, sync, check or whatever and not be concer
 
 --- The snapshot's files are never locked. rclone will not get an error about locked files.
 
-Let's say that I want to sync c:\data\ to the cloud.
+***
+
+Let's say that we want to sync c:\data\ to the cloud.
 
 1 - Create a file named vs.cmd:
 
@@ -25,13 +27,13 @@ Let's say that I want to sync c:\data\ to the cloud.
     rem load the the variables created by vshadow.exe
     call setvars.cmd
 
-    rem create the symbolc link to the snapshot
+    rem create the symbolic link to the snapshot
     mklink /d c:\snapshot\ %shadow_device_1%\
 
     rem run rclone with the source as c:\snapshot\data\, not c:\data\
     rclone sync c:\snapshot\data\ dest:data
 
-    rem Delete the symbolc link
+    rem Delete the symbolic link
     rmdir c:\snapshot\ /q
 
 That is all it takes to create a shadow mount.
@@ -44,7 +46,10 @@ vshadow.exe will:
 
 Note that c:\snapshot\ is a temporaty symbolc link only accessible while exec.cmd is running. when exec.cmd exits, the snapshot is removed by Windows operating system.
 
+***
+
 I find it confusing, that c:\snapshot\ is a mirror image of c:\\
+
 
 When I was writing more complex scripts, this confusion was leading to bugs.
 So I will give you 3 workarounds for clearer code for exec.cmd.
@@ -81,7 +86,12 @@ Most computers will not have free space to create a new drive. So shrink your c:
 Good luck and if you have any questions or comments, please do not hesitate to contact me.
 Create a post at the forum and put the "VSS question" in the subject and I will answer.
 
+
+***
+
+
 Now for the boring details.
+
 Vshadow.exe is part of the Window SDK which can be download free from Micro$oft at https://developer.microsoft.com/en-us/windows/downloads/windows-10-sdk. You will have to install the SDK and search for vshadow.exe. Tho the SDK is for windows 10, it runs fine on Windows Server 2019, including the free Windows Server Hyper-V edition, which I love!
 
 As for more detail as to what vshadow.exe is doing, check out https://docs.microsoft.com/en-us/windows/win32/vss/vshadow-tool-examples
