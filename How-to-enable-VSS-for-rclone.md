@@ -46,7 +46,8 @@ vshadow.exe will:
 
 Note that c:\snapshot\ is a temporaty symbolc link only accessible while exec.cmd is running. when exec.cmd exits, the snapshot is removed by Windows operating system.
 
-I find it confusing, that c:\snapshot\ is a mirror image of c:\
+I find it confusing, that c:\snapshot\ is a mirror image of c:\\
+
 When I was writing more complex scripts, this confusion was leading to bugs.
 So I will give you 3 workarounds for clearer code for exec.cmd.
 
