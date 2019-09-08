@@ -10,39 +10,38 @@ If Veeam backup software would run again while rclone is still uploading, Veeam 
 So I create a VSS read-only point-in-time snapshot and have rclone use that as the source.
 Now rclone can takes its time, upload, sync, check or whatever and not be concerned that the data will be modified.
 
-Yeah, you want that, you know you need that, and you can have it with 3 lines of code.  
-
-The following example is the bare minimum, just enough code to create a snapshot but not useful yet. 
-
-1 - Create a file named vs.cmd, with 1 line of code.
+Yeah, you want that, you know you need that, and you can have it with a few lines of code.  
+Let's say that I want to sync c:\data\ to the cloud.
+1 - Create a file named vs.cmd:
 
     vshadow.exe -nw -script=setvar-vshadow.cmd -exec=exec.cmd c:
 
-2 - Create a file named exec.cmd file with 2 lines of code.
+2 - Create a file named exec.cmd file:
 
     call setvar-vshadow.cmd
     mklink /d c:\snapshot\ %shadow_device_1%\
+    rclone sync c:\snapshot\data\ dest:data
+    rmdir c:\snapshot\ /q
 
 Execute vs.cmd and that is all it takes to create a shadow mount.
 When vs.cmd is run, it will execute vshadow.exe.
 
-vshadow.exe will do two things:
-1. Create a file named setvar-vshadow.cmd will some variables that needs to be passed to exec.cmd
-2. Execute exec.cmd
+vshadow.exe will:
+1. Create a file named setvar-vshadow.cmd will some variables that needs to be passed to exec.cmd.
+2. Create the snapshot.
+3. Execute exec.cmd.
 
-exec.cmd will do two things:
-1. Call setvar-vshadow.cmd
-2. Create a temporary shadow mount point. To be clear the shadow point will only exist will exec.cmd is running. When exec.cmd is done running, that mount point is no longer valid.
+exec.cmd will:
+1. Call setvar-vshadow.cmd, to load the variiables created by vshadow.exe.
+2. Create a symbolc link to the snapshot.
+3. Run rclone with the source as c:\snapshot\data\, not c:\data\.
+4. Delete the symbolc link.
+Note that:
+1. c:\snapshot is read-only, trying to delete a file will generate an error.
+2. All the files are readable, you will not get errors about in-use or locked files.
+3. c:\snapshot is a temporaty link only accessible while exec.cmd is running. when exec.cmd exits, the link is removed by Windows operating system.
 
-To make it useful for rclone, change exec.cmd to the 4 lines of code below and then execute vs.cmd.
-
-    call setvar-vshadow.cmd
-    mklink /d c:\snapshot\ %shadow_device_1%\
-    rclone sync c:\snapshot\ dest:snapshot
-    rmdir c:\snapshot\ /q
-
-I find it confusing, that c:\snapshot\ is a mirror image of c:\.
-I found that when writing more complex scripts, this confusion was leading to errors.
+I find it confusing, that c:\snapshot\ is a mirror image of c:\; when writing more complex scripts, this confusion was leading to errors.
 So I will give you 3 workarounds for clear code for exec.cmd.
 
 --- Use SUBST command.
@@ -50,8 +49,8 @@ So I will give you 3 workarounds for clear code for exec.cmd.
     call setvar-vshadow.cmd
     mklink /d c:\snapshot\ %shadow_device_1%\ 
     subst t: c:\
-    rclone sync t:\snapshot\ dest:snapshot
-    subst t: /delete
+    rclone sync t:\snapshot\data\ dest:data
+    subst t: /d
     rmdir c:\snapshot\ /q
 
 --- Use NET USE command
@@ -59,7 +58,7 @@ So I will give you 3 workarounds for clear code for exec.cmd.
     call setvar-vshadow.cmd
     mklink /d c:\snapshot\ %shadow_device_1%\ 
     net share snapshot=c:\
-    rclone sync \\localhost\snapshot\ dest:snapshot
+    rclone sync \\localhost\snapshot\data\ dest:data
     net share snapshot /delete
     rmdir c:\snapshot\ /q
 
@@ -69,7 +68,7 @@ Most Windows computer hard drives will not have free space to create a new drive
 
     call setvar-vshadow.cmd
     mklink /d b:\snapshot\ %shadow_device_1%\
-    rclone sync b:\snapshot\ dest:snapshot
+    rclone sync b:\snapshot\data\ dest:data
     rmdir b:\snapshot\ /q
 
 Good luck and if you have any questions or comments, please do not hesitate to contact me.
