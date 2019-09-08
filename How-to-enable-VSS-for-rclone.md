@@ -13,7 +13,7 @@ Now rclone can takes its time, upload, sync, check or whatever and not be concer
 2. The snapshot's files are never in-use. rclone will not get an error about in-use files.
 3. The snapshot's files are never locked. rclone will not get an error about locked files.
 
-Yeah, you want that, you know you need that, and you can have it with a few lines of code.  
+Yeah, you want that, you know you need that, and now you can have it with a few lines of code.  
 
 Let's say that I want to sync c:\data\ to the cloud.
 
