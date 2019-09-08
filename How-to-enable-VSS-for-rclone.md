@@ -20,11 +20,11 @@ Let's say that I want to sync c:\data\ to the cloud.
 
 1 - Create a file named vs.cmd:
 
-    vshadow.exe -nw -script=setvar.cmd -exec=exec.cmd c:
+    vshadow.exe -nw -script=setvars.cmd -exec=exec.cmd c:
 
 2 - Create a file named exec.cmd file:
 
-    call setvar.cmd
+    call setvars.cmd
     mklink /d c:\snapshot\ %shadow_device_1%\
     rclone sync c:\snapshot\data\ dest:data
     rmdir c:\snapshot\ /q
@@ -33,12 +33,12 @@ That is all it takes to create a shadow mount.
 When vs.cmd is run, it will execute vshadow.exe.
 
 vshadow.exe will:
-1. Create a file named setvar-vshadow.cmd will some variables that needs to be passed to exec.cmd.
+1. Create a file named setvars.cmd will some variables that needs to be passed to exec.cmd.
 2. Create the snapshot.
 3. Execute exec.cmd.
 
 exec.cmd will:
-1. Call setvar-vshadow.cmd, to load the variiables created by vshadow.exe.
+1. Call setvars.cmd, to load the variiables created by vshadow.exe.
 2. Create a symbolc link to the snapshot.
 3. Run rclone with the source as c:\snapshot\data\, not c:\data\.
 4. Delete the symbolc link.
@@ -51,7 +51,7 @@ So I will give you 3 workarounds for clear code for exec.cmd.
 
 --- Use SUBST command.
 
-    call setvar.cmd
+    call setvars.cmd
     mklink /d c:\snapshot\ %shadow_device_1%\ 
     subst t: c:\
     rclone sync t:\snapshot\data\ dest:data
@@ -60,7 +60,7 @@ So I will give you 3 workarounds for clear code for exec.cmd.
 
 --- Use NET USE command
 
-    call setvar.cmd
+    call setvars.cmd
     mklink /d c:\snapshot\ %shadow_device_1%\ 
     net share snapshot=c:\
     rclone sync \\localhost\snapshot\data\ dest:data
@@ -71,7 +71,7 @@ So I will give you 3 workarounds for clear code for exec.cmd.
 Create a new drive and use that for the mount point.
 Most computers will not have free space to create a new drive. So shrink your c: drive by just 1MB and use that space to create new partition and name it the b: drive. Since the b: drive will only be used to mount the vss point, 1MB is plenty of space.
 
-    call setvar.cmd
+    call setvars.cmd
     mklink /d b:\snapshot\ %shadow_device_1%\
     rclone sync b:\snapshot\data\ dest:data
     rmdir b:\snapshot\ /q
