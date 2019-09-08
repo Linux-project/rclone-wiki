@@ -29,7 +29,7 @@ Let's say that I want to sync c:\data\ to the cloud.
     rclone sync c:\snapshot\data\ dest:data
     rmdir c:\snapshot\ /q
 
-Execute vs.cmd and that is all it takes to create a shadow mount.
+That is all it takes to create a shadow mount.
 When vs.cmd is run, it will execute vshadow.exe.
 
 vshadow.exe will:
