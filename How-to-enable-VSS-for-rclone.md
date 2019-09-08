@@ -9,9 +9,8 @@ If Veeam backup software would run again while rclone is still uploading, Veeam 
 
 So I create a VSS read-only point-in-time snapshot and have rclone use that as the source.
 Now rclone can takes its time, upload, sync, check or whatever and not be concerned that the data will be modified.
-1. The snapshot's files are read-only. Attempting to delete a file will generate a read-only error.
-2. The snapshot's files are never in-use. rclone will not get an error about in-use files.
-3. The snapshot's files are never locked. rclone will not get an error about locked files.
+--- The snapshot's files are never in-use. rclone will not get an error about in-use files.
+--- The snapshot's files are never locked. rclone will not get an error about locked files.
 
 Yeah, you want that, you know you need that, and now you can have it with a few lines of code.  
 
