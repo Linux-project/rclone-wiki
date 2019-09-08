@@ -33,7 +33,7 @@ That is all it takes to create a shadow mount.
 When vs.cmd is run, it will execute vshadow.exe.
 
 vshadow.exe will:
-1. Create a file named setvars.cmd will some variables that needs to be passed to exec.cmd.
+1. Create a file named setvars.cmd with some variables that needs to be passed to exec.cmd.
 2. Create the snapshot.
 3. Execute exec.cmd.
 
