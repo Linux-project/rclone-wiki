@@ -35,11 +35,11 @@ To enable mounting a volume using rclone via an entry in fstab the following hel
 
     # exec rclone
     trans="$trans $remote $mountpoint"
+    # NOTE: do not try "mount --daemon" here, it does not play well with systemd automount, use '&'!
     PATH=$PATH rclone mount $trans </dev/null >/dev/null 2>/dev/null &
 
-    out=`ls -l $dst`
-    until [ "$out" != 'total 0' ]; do
-        out=`ls -l $dst`
+    # WARNING: this will loop forever if remote is actually empty!
+    until [ "`ls -l $mountpoint`" != 'total 0' ]; do
         sleep 1
     done
 
