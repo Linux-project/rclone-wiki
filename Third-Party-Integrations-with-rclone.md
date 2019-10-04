@@ -24,7 +24,9 @@ A simple cross-platform GUI for rclone: https://mmozeiko.github.io/RcloneBrowser
 Works on Windows, macOS and GNU/Linux.
 
 NOTE: while Martin Mozeiko seems that has not abandoned the code, he showed also he is not actually maintaining it.
+
 DR,TL: go directly to https://github.com/kapitainsky/RcloneBrowser/releases
+
 If you enjoy reading:
 There have been some clones/forks, and have kept more or less alive the browser.
 Last fork, quite improved, available on 20191004, here https://github.com/kapitainsky/RcloneBrowser/releases (based on DinCahill fork)
