@@ -1,4 +1,4 @@
-## rclonefs helper script 
+# ## ### ## rclonefs helper script 
 
 To enable mounting a volume using rclone via an entry in fstab the following helper script can be used:
 
