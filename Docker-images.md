@@ -4,8 +4,10 @@ This is an alphabetical list of community-driven docker images that run rclone f
 
 As these are not maintained by the rclone project please check that they have an up to date version of rclone before using.
 
-# bcardiff/rclone or pfidr/rclone
-https://hub.docker.com/r/bcardiff/rclone/ or https://hub.docker.com/r/pfidr/rclone/
+# bcardiff/rclone --> now pfidr/rclone
+https://hub.docker.com/r/pfidr/rclone/
+
+**bcardiff/rclone is no longer actively maintained**
 
 **pfidr/rclone has all outstanding issues resolved and is running up to date rclone version**
 
