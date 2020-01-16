@@ -135,3 +135,8 @@ Features:
 ## Docker images ##
 
 See https://github.com/rclone/rclone/wiki/Docker-images
+
+## [restic](https://restic.net/)
+restic is a program that does backups right - the design goals are to make backups easy, fast, verifiable, secure, efficient and secure.
+
+rclone is featured as a [restic backend](https://restic.readthedocs.io/en/stable/030_preparing_a_new_repo.html#other-services-via-rclone). Backing up rclone remotes [is in the idea phase](https://github.com/restic/restic/issues/2529).
